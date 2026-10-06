@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1528">
+<title>K2 Base Camp &amp; Concordia — Gilgit-Baltistan Attraction Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#232135;
+    --ink-soft:#3c3a4d;
+    --muted:#75737f;
+    --faint:#9a98a6;
+    --orange:#e8590c;
+    --green:#84cc16;
+    --dark:#312d6b;
+    --dark-2:#282459;
+    --card:#ffffff;
+    --line:#e7e5ee;
+    --hair:#eeedf3;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{background:#dcd9e4}
+  body{
+    width:1528px;margin:0 auto;
+    font-family:'Manrope','Century Gothic','Futura','Trebuchet MS',system-ui,-apple-system,sans-serif;
+    color:var(--ink);
+    background:linear-gradient(180deg,#e9e7f0 0%,#e9e7ee 52%,#ece7df 100%);
+    -webkit-font-smoothing:antialiased;
+  }
+  a{text-decoration:none;color:inherit}
+  img{display:block}
+  .wrap{padding-left:120px;padding-right:120px}
+
+  /* ---------- buttons ---------- */
+  .btn{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:15px 26px;
+       font:600 15px/1 'Manrope',sans-serif;letter-spacing:.01em;cursor:pointer;border:none;transition:.18s}
+  .btn-dark{background:var(--dark);color:#fff;box-shadow:0 10px 22px rgba(41,37,102,.28)}
+  .btn-dark:hover{background:var(--dark-2);transform:translateY(-1px)}
+  .btn-light{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 6px 16px rgba(35,33,53,.07)}
+  .btn-light:hover{border-color:#d5d2e0;transform:translateY(-1px)}
+  .btn-green{background:var(--green);color:#fff;width:100%;justify-content:center;
+             box-shadow:0 12px 24px rgba(132,204,22,.35)}
+  .btn-green:hover{filter:brightness(1.05)}
+  .btn .arr{font-weight:700;font-size:14px;opacity:.9}
+  .btn-white{background:#fff;color:var(--ink);box-shadow:0 8px 20px rgba(0,0,0,.22)}
+
+  /* ---------- eyebrow pill ---------- */
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;background:#fff;border:1px solid var(--line);
+           border-radius:999px;padding:9px 18px;font:700 11px/1 'Manrope',sans-serif;
+           letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);
+           box-shadow:0 6px 14px rgba(35,33,53,.06)}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--orange)}
+
+  /* ---------- header ---------- */
+  header{display:flex;height:460px;overflow:hidden}
+  .h-left{width:50%;background:linear-gradient(118deg,#292464 0%,#312d6b 52%,#3c3f73 100%);
+          padding:92px 80px 64px 120px;display:flex;flex-direction:column;color:#fff}
+  .h-eyebrow{font:700 11px/1 'Manrope',sans-serif;letter-spacing:.22em;color:#b9b5d8;text-transform:uppercase}
+  .h-left h1{font-size:56px;font-weight:700;letter-spacing:-.01em;margin-top:18px}
+  .h-loc{display:flex;align-items:center;gap:9px;margin-top:14px;font:500 15px/1.4 'Manrope',sans-serif;color:#cfcbe6}
+  .h-loc svg{flex:none}
+  .h-chips{display:flex;gap:12px;margin-top:auto}
+  .chip{display:inline-flex;align-items:center;gap:9px;border-radius:999px;padding:11px 18px;
+        background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.22);
+        font:500 13px/1 'Manrope',sans-serif;color:#e9e7f5}
+  .chip svg{opacity:.85}
+  .h-right{width:50%;position:relative}
+  .h-right img{width:100%;height:100%;object-fit:cover}
+  .home-pill{position:absolute;top:26px;right:28px;display:inline-flex;align-items:center;gap:9px;
+             background:#fff;border-radius:999px;padding:12px 22px;font:600 14px/1 'Manrope',sans-serif;
+             color:var(--ink);box-shadow:0 10px 24px rgba(0,0,0,.25);transition:.18s}
+  .home-pill:hover{transform:translateY(-1px)}
+  .home-pill .x{font-weight:700;font-size:13px;color:var(--ink-soft)}
+
+  /* ---------- breadcrumb bar ---------- */
+  .crumbbar{margin-top:28px;background:#fff;border-radius:999px;box-shadow:0 14px 34px rgba(35,33,53,.10);
+            display:flex;align-items:center;justify-content:space-between;padding:10px 12px 10px 26px}
+  .crumb-left{display:flex;align-items:center;gap:12px;min-width:0}
+  .crumb-left .dot{width:8px;height:8px;border-radius:50%;background:var(--orange);flex:none}
+  .crumb-name{font:600 16px/1 'Manrope',sans-serif;color:var(--ink);white-space:nowrap}
+  .crumb-sub{font:500 13px/1.3 'Manrope',sans-serif;color:var(--faint);white-space:nowrap}
+  .crumb-sep{color:#d8d6e2;font-size:13px}
+  .nav-pills{display:flex;gap:6px}
+  .nav-pill{border-radius:999px;padding:12px 22px;font:600 13.5px/1 'Manrope',sans-serif;
+            color:var(--ink-soft);background:transparent;border:none;cursor:pointer;transition:.18s}
+  .nav-pill:hover{background:#f2f1f7}
+  .nav-pill.active{background:var(--dark);color:#fff;box-shadow:0 8px 18px rgba(41,37,102,.25)}
+
+  /* ---------- section headings ---------- */
+  section{scroll-margin-top:24px}
+  .sec-head{margin-top:74px}
+  .h2{font-size:40px;letter-spacing:-.01em;margin-top:18px;color:var(--ink)}
+  .h2 b{font-weight:800}.h2 span{font-weight:500}
+  .sec-sub{margin-top:12px;font:400 15.5px/1.6 'Manrope',sans-serif;color:var(--muted);max-width:820px}
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1fr 470px;gap:56px;margin-top:34px;align-items:stretch}
+  .about-left h3{font-size:26px;font-weight:700;color:var(--ink)}
+  .about-left p{margin-top:14px;font:400 16.5px/1.7 'Manrope',sans-serif;color:var(--muted);max-width:940px}
+  .about-btns{display:flex;gap:14px;margin-top:30px}
+  .about-gallery{margin-top:36px;display:flex;flex-direction:column;gap:14px}
+  .ag-wide{position:relative;border-radius:24px;overflow:hidden;box-shadow:0 18px 40px rgba(35,33,53,.16)}
+  .ag-wide img{width:100%;height:300px;object-fit:cover}
+  .ag-row{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .ag-row figure{position:relative;margin:0;border-radius:20px;overflow:hidden;box-shadow:0 14px 32px rgba(35,33,53,.14)}
+  .ag-row img{width:100%;height:200px;object-fit:cover}
+  .photo-tag{position:absolute;left:18px;bottom:18px;background:rgba(24,21,56,.72);backdrop-filter:blur(4px);
+             color:#fff;border-radius:999px;padding:10px 18px;font:600 12.5px/1 'Manrope',sans-serif;letter-spacing:.04em}
+  .photo-tag.small{left:14px;bottom:14px;padding:8px 14px;font-size:11px}
+  .facts{background:var(--card);border-radius:22px;padding:26px 26px 22px;box-shadow:0 16px 40px rgba(35,33,53,.10)}
+  .facts-head{display:flex;align-items:center;gap:10px;font:700 16.5px/1 'Manrope',sans-serif;color:var(--ink)}
+  .facts-head::before{content:"";width:16px;height:3px;border-radius:2px;background:var(--orange)}
+  .facts table{width:100%;border-collapse:collapse;margin-top:14px}
+  .facts td{padding:12px 0;border-top:1px solid var(--hair);vertical-align:top}
+  .facts tr:first-child td{border-top:none}
+  .facts .k{font:600 14px/1.4 'Manrope',sans-serif;color:var(--ink);width:118px}
+  .facts .v{font:400 14px/1.5 'Manrope',sans-serif;color:var(--muted)}
+  .facts .btn-green{margin-top:16px}
+  aside{display:flex;flex-direction:column;gap:24px}
+  .aside-photo{position:relative;flex:1;min-height:280px;border-radius:22px;overflow:hidden;
+               box-shadow:0 16px 36px rgba(35,33,53,.14)}
+  .aside-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+  /* ---------- highlights (photo cards) ---------- */
+  .hl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:34px}
+  .hl-card{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 16px 38px rgba(35,33,53,.12);transition:.2s}
+  .hl-card:hover{transform:translateY(-4px);box-shadow:0 24px 48px rgba(35,33,53,.18)}
+  .hl-img{position:relative}
+  .hl-img img{width:100%;height:330px;object-fit:cover}
+  .hl-num{position:absolute;top:16px;left:16px;width:38px;height:38px;border-radius:50%;
+          background:#fff;display:flex;align-items:center;justify-content:center;
+          font:700 15px/1 'Manrope',sans-serif;color:var(--orange);box-shadow:0 8px 18px rgba(0,0,0,.22)}
+  .hl-body{padding:20px 22px 18px}
+  .hl-title{font:600 17.5px/1.35 'Manrope',sans-serif;color:var(--ink)}
+  .hl-meta{display:flex;align-items:center;justify-content:space-between;margin-top:12px;
+           font:500 13px/1 'Manrope',sans-serif}
+  .hl-meta .on{color:var(--faint)}
+  .hl-meta .inc{color:var(--orange);font-weight:600}
+
+  /* ---------- map ---------- */
+  .map-card{margin-top:34px;background:#fff;border-radius:28px;padding:14px;box-shadow:0 22px 54px rgba(35,33,53,.14)}
+  .map-inner{position:relative;border-radius:20px;overflow:hidden;height:750px;background:#ede9de}
+  .layer{position:absolute;inset:0}
+  .layer img{width:100%;height:100%;object-fit:cover}
+  .layer svg{width:100%;height:100%;display:block}
+  .map-controls{position:absolute;top:20px;left:20px;display:flex;gap:8px;z-index:6}
+  .map-ctl{border-radius:999px;padding:11px 20px;font:600 13px/1 'Manrope',sans-serif;border:none;cursor:pointer;
+           background:rgba(255,255,255,.92);color:var(--ink-soft);box-shadow:0 6px 16px rgba(0,0,0,.18);transition:.15s}
+  .map-ctl.active{background:var(--dark);color:#fff}
+  .map-ctl.expand{padding:11px 14px}
+  .pin-wrap{position:absolute;left:22.73%;top:30.6%;transform:translate(-50%,-100%);z-index:5;cursor:pointer;
+            display:flex;flex-direction:column;align-items:center}
+  .pulse{position:absolute;left:50%;bottom:-7px;transform:translateX(-50%);width:26px;height:26px;border-radius:50%;
+         background:rgba(225,75,52,.35);animation:pulse 1.8s infinite}
+  @keyframes pulse{0%{transform:translateX(-50%) scale(.6);opacity:.9}70%{transform:translateX(-50%) scale(2.4);opacity:0}100%{opacity:0}}
+  .pin-label{margin-bottom:10px;display:inline-block;background:rgba(24,21,56,.78);backdrop-filter:blur(4px);color:#fff;
+             border-radius:999px;padding:10px 20px;font:600 13.5px/1.2 'Manrope',sans-serif;white-space:nowrap;
+             box-shadow:0 10px 24px rgba(0,0,0,.28)}
+  .map-chip{position:absolute;left:20px;bottom:20px;z-index:6;background:rgba(24,21,56,.78);backdrop-filter:blur(4px);
+            color:#fff;border-radius:14px;padding:13px 18px}
+  .map-chip .t1{font:700 11px/1 'Manrope',sans-serif;letter-spacing:.16em}
+  .map-chip .t2{font:400 12.5px/1 'Manrope',sans-serif;margin-top:7px;color:#c9c6de}
+  .map-attr{position:absolute;right:14px;bottom:12px;z-index:6;background:rgba(255,255,255,.82);border-radius:8px;
+            padding:5px 10px;font:400 10.5px/1.3 'Manrope',sans-serif;color:#5c5a68}
+  .map-hint{margin-top:14px;text-align:center;font:400 12.5px/1.5 'Manrope',sans-serif;color:var(--faint)}
+  .map-btns{display:flex;gap:14px;margin-top:22px}
+
+  /* ---------- nearby ---------- */
+  .nb-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;margin-top:34px}
+  .nb-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 14px 32px rgba(35,33,53,.10);transition:.2s}
+  .nb-card:hover{transform:translateY(-4px);box-shadow:0 22px 44px rgba(35,33,53,.16)}
+  .nb-img img{width:100%;height:230px;object-fit:cover}
+  .nb-body{padding:20px 18px 18px}
+  .nb-title{font:600 16.5px/1.3 'Manrope',sans-serif;color:var(--ink)}
+  .nb-meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:16px;
+           padding-top:14px;border-top:1px solid var(--hair);font:500 12px/1.2 'Manrope',sans-serif;color:var(--muted)}
+  .nb-meta a{color:var(--orange);font-weight:600;white-space:nowrap}
+
+  /* ---------- footer ---------- */
+  footer{margin:80px 0 56px;border-radius:30px;overflow:hidden;position:relative;height:320px;box-shadow:0 26px 60px rgba(35,33,53,.22)}
+  footer img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .foot-overlay{position:absolute;inset:0;background:linear-gradient(92deg,rgba(30,26,74,.90) 0%,rgba(30,26,74,.55) 46%,rgba(30,26,74,.12) 100%)}
+  .foot-content{position:relative;z-index:2;height:100%;display:flex;align-items:center;justify-content:space-between;padding:0 72px}
+  .foot-eyebrow{font:700 11px/1 'Manrope',sans-serif;letter-spacing:.2em;color:#b9b5d8;text-transform:uppercase}
+  .foot-title{font-size:38px;font-weight:700;color:#fff;margin-top:12px;letter-spacing:-.01em}
+  .foot-sub{font:400 14.5px/1.5 'Manrope',sans-serif;color:#cfcbe6;margin-top:10px}
+  .foot-actions{display:flex;gap:14px}
+</style>
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="h-left">
+    <div>
+      <div class="h-eyebrow">Gilgit&#8209;Baltistan &middot; Attraction Guide</div>
+      <h1>K2 Base Camp &amp; Concordia</h1>
+      <div class="h-loc">
+        <svg width="13" height="16" viewBox="0 0 13 16" fill="none"><path d="M6.5 1C3.46 1 1 3.4 1 6.36 1 10.3 6.5 15 6.5 15S12 10.3 12 6.36C12 3.4 9.54 1 6.5 1Z" stroke="#f0a886" stroke-width="1.6"/><circle cx="6.5" cy="6.3" r="2" stroke="#f0a886" stroke-width="1.6"/></svg>
+        Central Karakoram National Park &middot; Gilgit&#8209;Baltistan
+      </div>
+    </div>
+    <div class="h-chips">
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1.2" y="2.2" width="11.6" height="10.6" rx="2.4" stroke="#e9e7f5" stroke-width="1.4"/><path d="M1.6 5.6h10.8M4.4 1v2.6M9.6 1v2.6" stroke="#e9e7f5" stroke-width="1.4"/></svg>
+        June &ndash; August (short, weather-dependent window)
+      </span>
+      <span class="chip">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.8" stroke="#e9e7f5" stroke-width="1.4"/><path d="M7 3.8V7l2.2 1.6" stroke="#e9e7f5" stroke-width="1.4" stroke-linecap="round"/></svg>
+        12&ndash;16 days round trip from Skardu
+      </span>
+    </div>
+  </div>
+  <div class="h-right">
+    <img src="{{HERO}}" alt="K2 Base Camp and Concordia">
+    <a class="home-pill" href="#"><span class="x">&#10005;</span> Back to Home</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <!-- ================= BREADCRUMB / NAV ================= -->
+  <nav class="crumbbar">
+    <div class="crumb-left">
+      <span class="dot"></span>
+      <span class="crumb-name">K2 Base Camp &amp; Concordia</span>
+      <span class="crumb-sep">&#183;</span>
+      <span class="crumb-sub">Central Karakoram National Park &middot; Gilgit&#8209;Baltistan</span>
+    </div>
+    <div class="nav-pills">
+      <button class="nav-pill active" data-go="about">About</button>
+      <button class="nav-pill" data-go="map">Map &amp; directions</button>
+      <button class="nav-pill" data-go="nearby">Nearby places</button>
+    </div>
+  </nav>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="about-grid">
+      <div class="about-left">
+        <h3>About K2 Base Camp &amp; Concordia</h3>
+        <p>Concordia is the great glacier junction where the Baltoro and Godwin&#8209;Austen glaciers meet, ringed by four of the world&#8217;s fourteen 8,000&#8209;metre peaks including K2 at 8,611&nbsp;m. Reaching it is a full expedition: roughly two weeks on foot from Askole with porters, a licensed operator and camp support.</p>
+        <div class="about-btns">
+          <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7333,76.5167" target="_blank" rel="noopener">Directions in Google Maps <span class="arr">&#8599;</span></a>
+          <button class="btn btn-light" data-go="map">See it on the map</button>
+        </div>
+        <div class="about-gallery">
+          <div class="ag-wide">
+            <img src="{{SIDE1}}" alt="The Baltoro glacier">
+            <span class="photo-tag">The Baltoro glacier &middot; Central Karakoram</span>
+          </div>
+          <div class="ag-row">
+            <figure>
+              <img src="{{G1}}" alt="Trekkers on the Baltoro ice">
+              <span class="photo-tag small">Trekking the Baltoro ice</span>
+            </figure>
+            <figure>
+              <img src="{{G2}}" alt="Camp on the Baltoro route">
+              <span class="photo-tag small">Camp nights on the route</span>
+            </figure>
+            <figure>
+              <img src="{{G3}}" alt="Trango Towers">
+              <span class="photo-tag small">Trango Towers en route</span>
+            </figure>
+          </div>
+        </div>
+      </div>
+      <aside>
+        <div class="facts">
+          <div class="facts-head">Quick Facts</div>
+          <table>
+            <tr><td class="k">Where</td><td class="v">Central Karakoram National Park &middot; Gilgit&#8209;Baltistan</td></tr>
+            <tr><td class="k">Best season</td><td class="v">June &ndash; August (short, weather-dependent window)</td></tr>
+            <tr><td class="k">Time needed</td><td class="v">12&ndash;16 days round trip from Skardu</td></tr>
+            <tr><td class="k">Coordinates</td><td class="v">35.7333, 76.5167</td></tr>
+          </table>
+          <a class="btn btn-green" href="#" onclick="return false">Find Licensed Services <span class="arr">&#8599;</span></a>
+        </div>
+        <div class="aside-photo">
+          <img src="{{G4}}" alt="Godwin-Austen glacier icefall">
+          <span class="photo-tag">Godwin-Austen glacier</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= HIGHLIGHTS ================= -->
+  <section id="highlights">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span> What you will see</span>
+      <h2 class="h2"><b>The highlights</b> <span>of K2 Base Camp &amp; Concordia</span></h2>
+    </div>
+    <div class="hl-grid">
+      <div class="hl-card">
+        <div class="hl-img"><img src="{{HL1}}" alt="Concordia amphitheatre camp"><span class="hl-num">1</span></div>
+        <div class="hl-body">
+          <div class="hl-title">The north-facing amphitheatre from Concordia</div>
+          <div class="hl-meta"><span class="on">On site</span><span class="inc">Included &#8599;</span></div>
+        </div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-img"><img src="{{HL2}}" alt="K2 and Broad Peak skyline"><span class="hl-num">2</span></div>
+        <div class="hl-body">
+          <div class="hl-title">Broad Peak and the Gasherbrum group on a single skyline</div>
+          <div class="hl-meta"><span class="on">On site</span><span class="inc">Included &#8599;</span></div>
+        </div>
+      </div>
+      <div class="hl-card">
+        <div class="hl-img"><img src="{{HL3}}" alt="Trango Towers golden light"><span class="hl-num">3</span></div>
+        <div class="hl-body">
+          <div class="hl-title">Baltoro Glacier ice towers and the Trango Tower spires</div>
+          <div class="hl-meta"><span class="on">On site</span><span class="inc">Included &#8599;</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= MAP ================= -->
+  <section id="map">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span> Map</span>
+      <h2 class="h2"><b>K2 Base Camp &amp; Concordia</b> <span>on the map</span></h2>
+    </div>
+    <div class="map-card">
+      <div class="map-inner">
+        <div class="layer" id="layerSat"><img src="{{MAPSAT}}" alt="Satellite view of the Baltoro glacier junction"></div>
+        <div class="layer" id="layerStreet" style="display:none">
+          <svg viewBox="0 0 1260 750" preserveAspectRatio="xMidYMid slice">
+            <rect width="1260" height="750" fill="#b8a88e"/>
+            <path d="M0 0 L1260 0 L1260 90 L980 150 L620 110 L300 160 L0 100 Z" fill="#eceae2"/>
+            <path d="M0 100 L300 160 L620 110 L980 150 L1260 90 L1260 170 L900 220 L560 190 L260 240 L0 180 Z" fill="#d9cbb2" opacity=".85"/>
+            <path d="M-20 210 C 160 170, 320 260, 420 300 L520 345 C 640 400, 760 430, 900 470 C 1020 505, 1150 520, 1280 560 L1280 640 C 1120 600, 980 585, 840 550 C 700 515, 560 470, 440 420 L330 372 C 220 322, 90 250, -20 290 Z" fill="#e9e6dc"/>
+            <path d="M-20 250 C 120 285, 260 340, 380 385 L470 420 C 610 475, 760 515, 900 550 L900 570 C 760 535, 610 495, 470 440 L375 402 C 250 355, 110 305, -20 275 Z" fill="#cfc9b8" opacity=".9"/>
+            <path d="M-20 30 C 140 90, 260 170, 380 240 L460 285 L400 320 C 300 250, 170 160, -20 110 Z" fill="#f0eee6"/>
+            <path d="M460 285 C 520 260, 560 200, 600 130" fill="none" stroke="#f0eee6" stroke-width="34" stroke-linecap="round"/>
+            <path d="M900 470 C 960 420, 1000 340, 1020 240" fill="none" stroke="#e9e6dc" stroke-width="30" stroke-linecap="round"/>
+            <path d="M640 750 C 700 690, 780 640, 880 600 C 1000 552, 1120 540, 1260 560" fill="none" stroke="#a99878" stroke-width="4" stroke-dasharray="10 9"/>
+            <path d="M240 480 C 320 440, 380 420, 452 392" fill="none" stroke="#7d6f55" stroke-width="3.5" stroke-dasharray="9 8"/>
+            <circle cx="440" cy="412" r="9" fill="#e14b34" stroke="#fff" stroke-width="3"/>
+            <text x="465" y="418" font-family="Manrope,sans-serif" font-size="15" font-weight="600" fill="#4b4437">Concordia &#183; 4,600 m</text>
+            <text x="620" y="95" text-anchor="middle" font-family="Manrope,sans-serif" font-size="20" font-weight="700" letter-spacing="6" fill="#a29a86">K2 &#183; 8,611 M</text>
+            <text x="300" y="470" text-anchor="middle" font-family="Manrope,sans-serif" font-size="13" font-weight="600" fill="#7d7461" transform="rotate(24 300 470)">GODWIN-AUSTEN GLACIER</text>
+            <text x="880" y="640" text-anchor="middle" font-family="Manrope,sans-serif" font-size="14" font-weight="700" letter-spacing="4" fill="#8d8064" transform="rotate(12 880 640)">BALTORO GLACIER</text>
+            <text x="120" y="520" font-family="Manrope,sans-serif" font-size="12.5" font-weight="600" fill="#7d6f55" transform="rotate(-24 120 520)">TREK FROM ASKOLE</text>
+            <text x="1060" y="720" font-family="Manrope,sans-serif" font-size="13" font-weight="600" fill="#8d8064">ASKOLE &#8594; JHOLA &#8594; PAIJU</text>
+          </svg>
+        </div>
+        <div class="map-controls">
+          <button class="map-ctl" id="btnMap">Map</button>
+          <button class="map-ctl active" id="btnSat">Satellite</button>
+          <button class="map-ctl expand" title="Expand" onclick="return false">&#292;</button>
+        </div>
+        <div class="pin-wrap" onclick="window.open('https://www.google.com/maps/search/?api=1&query=35.7333,76.5167','_blank')">
+          <div class="pulse"></div>
+          <div class="pin-label">Concordia &#183; Baltoro &amp; Godwin-Austen &#183; 4,600 m</div>
+          <svg width="46" height="58" viewBox="0 0 46 58" fill="none">
+            <path d="M23 1C11.4 1 2 10.4 2 22c0 15.5 21 35 21 35s21-19.5 21-35C44 10.4 34.6 1 23 1Z" fill="#e14b34" stroke="#fff" stroke-width="3"/>
+            <circle cx="23" cy="21.5" r="7" fill="#fff"/>
+          </svg>
+        </div>
+        <div class="map-chip">
+          <div class="t1">GILGIT&#8209;BALTISTAN</div>
+          <div class="t2">6 mapped places</div>
+        </div>
+        <div class="map-attr">Map data &#169; OpenStreetMap contributors</div>
+      </div>
+      <div class="map-hint">Switch between Map and Satellite &#183; click the pin to open turn&#8209;by&#8209;turn directions in Google Maps</div>
+    </div>
+    <div class="map-btns">
+      <a class="btn btn-dark" href="https://www.google.com/maps/search/?api=1&amp;query=35.7333,76.5167" target="_blank" rel="noopener">Open in Google Maps <span class="arr">&#8599;</span></a>
+      <a class="btn btn-light" href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7333,76.5167" target="_blank" rel="noopener">Get Directions</a>
+      <a class="btn btn-light" href="https://www.openstreetmap.org/#map=13/36.8500/74.8283" target="_blank" rel="noopener">Open National Map</a>
+    </div>
+  </section>
+
+  <!-- ================= NEARBY ================= -->
+  <section id="nearby">
+    <div class="sec-head">
+      <span class="eyebrow"><span class="dot"></span> Nearby</span>
+      <h2 class="h2"><b>more</b> <span>in Gilgit&#8209;Baltistan</span></h2>
+    </div>
+    <div class="nb-grid">
+      <div class="nb-card">
+        <div class="nb-img"><img src="{{N1}}" alt="Hunza &amp; Baltit Fort"></div>
+        <div class="nb-body">
+          <div class="nb-title">Hunza &amp; Baltit Fort</div>
+          <div class="nb-meta"><span>April &ndash; October</span><a href="#" onclick="return false">Open guide &#8599;</a></div>
+        </div>
+      </div>
+      <div class="nb-card">
+        <div class="nb-img"><img src="{{N2}}" alt="Attabad Lake"></div>
+        <div class="nb-body">
+          <div class="nb-title">Attabad Lake</div>
+          <div class="nb-meta"><span>April &ndash; October</span><a href="#" onclick="return false">Open guide &#8599;</a></div>
+        </div>
+      </div>
+      <div class="nb-card">
+        <div class="nb-img"><img src="{{N3}}" alt="Deosai National Park"></div>
+        <div class="nb-body">
+          <div class="nb-title">Deosai National Park</div>
+          <div class="nb-meta"><span>Late June &ndash; early Sept</span><a href="#" onclick="return false">Open guide &#8599;</a></div>
+        </div>
+      </div>
+      <div class="nb-card">
+        <div class="nb-img"><img src="{{N4}}" alt="Fairy Meadows"></div>
+        <div class="nb-body">
+          <div class="nb-title">Fairy Meadows</div>
+          <div class="nb-meta"><span>May &ndash; October</span><a href="#" onclick="return false">Open guide &#8599;</a></div>
+        </div>
+      </div>
+      <div class="nb-card">
+        <div class="nb-img"><img src="{{N5}}" alt="Khunjerab Pass"></div>
+        <div class="nb-body">
+          <div class="nb-title">Khunjerab Pass</div>
+          <div class="nb-meta"><span>May &ndash; November</span><a href="#" onclick="return false">Open guide &#8599;</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <img class="bg" src="{{FOOT}}" alt="Concordia at dusk">
+    <div class="foot-overlay"></div>
+    <div class="foot-content">
+      <div>
+        <div class="foot-eyebrow">Gilgit&#8209;Baltistan &middot; Attraction Guide</div>
+        <div class="foot-title">K2 Base Camp &amp; Concordia</div>
+        <div class="foot-sub">Central Karakoram National Park &middot; 4,600 m</div>
+      </div>
+      <div class="foot-actions">
+        <a class="btn btn-white" href="#"><span class="x" style="font-weight:700">&#10005;</span>&nbsp; Back to Home</a>
+        <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&amp;destination=35.7333,76.5167" target="_blank" rel="noopener">Get Directions <span class="arr">&#8599;</span></a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+
+<script>
+  // smooth-scroll nav pills
+  document.querySelectorAll('[data-go]').forEach(function(el){
+    el.addEventListener('click', function(){
+      var t = document.getElementById(el.getAttribute('data-go'));
+      if(t) t.scrollIntoView({behavior:'smooth', block:'start'});
+      document.querySelectorAll('.nav-pill').forEach(function(p){p.classList.remove('active')});
+      if(el.classList.contains('nav-pill')) el.classList.add('active');
+      else document.querySelector('.nav-pill[data-go="'+el.getAttribute('data-go')+'"]').classList.add('active');
+    });
+  });
+  // map / satellite toggle
+  var bMap = document.getElementById('btnMap'), bSat = document.getElementById('btnSat');
+  var lMap = document.getElementById('layerStreet'), lSat = document.getElementById('layerSat');
+  function setLayer(sat){
+    lSat.style.display = sat ? 'block' : 'none';
+    lMap.style.display = sat ? 'none' : 'block';
+    bSat.classList.toggle('active', sat);
+    bMap.classList.toggle('active', !sat);
+  }
+  bMap.addEventListener('click', function(){setLayer(false)});
+  bSat.addEventListener('click', function(){setLayer(true)});
+  // scroll spy
+  var spy = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){
+        var id = en.target.id;
+        document.querySelectorAll('.nav-pill').forEach(function(p){
+          p.classList.toggle('active', p.getAttribute('data-go') === id);
+        });
+      }
+    });
+  }, {rootMargin:'-30% 0px -55% 0px'});
+  ['about','map','nearby'].forEach(function(id){ spy.observe(document.getElementById(id)); });
+</script>
+</body>
+</html>
